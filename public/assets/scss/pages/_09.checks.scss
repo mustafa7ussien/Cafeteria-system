@@ -1,0 +1,29 @@
+.checks {
+  input {
+    @extend .w-100;
+  }
+  .user-checks {
+    .user {
+      cursor: pointer; // transition: all 0.5s ease-in-out;
+      &:hover {
+        >td>i {
+          color: #f00;
+        }
+      }
+      &+tr {
+        display: none; // transition: all 0.5s ease-in-out;
+      }
+    }
+    .user-data {
+      cursor: pointer;
+      &:hover {
+        >td>i {
+          color: #f00;
+        }
+      }
+      &+tr {
+        display: none;
+      }
+    }
+  }
+}
