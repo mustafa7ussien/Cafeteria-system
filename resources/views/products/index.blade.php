@@ -9,6 +9,7 @@
             <th>Product Name</th>
             <th>Price</th>
             <th>Image</th>
+            <th>Category</th>
             <th>Status</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -20,6 +21,9 @@
                 <td>{{$product->name}}</td>
                 <td>{{$product->price}}</td>
                 <td><img src="{{asset("productimages/".$product->image)}}" alt="product image" width="15%" height="15%"> </td>
+                <td><a href="{{$product->category_id?route("categories.show",$product->category_id):''}}">
+                 {{$product->category?$product->category->name:""}} </a></td>
+
                 <td><a href="" class="btn btn-info">Avaliable  </a></td>
                 <td><a href="{{route("products.edit", $product->id)}}" class="btn btn-warning">Edit  </a></td>
                 <td>

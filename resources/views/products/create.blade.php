@@ -30,13 +30,13 @@
             <label class="form-label">Product Image</label>
             <input type="file" name="image" value="{{old("image")}}"  class="form-control" >
         </div>
-        {{-- <div class="mb-3">
+        <div class="mb-3">
             <select class="form-select" aria-label="Default select example" name="category_id">
                 @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
-        </div> --}}
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use PHPUnit\Framework\Constraint\FileExists;
@@ -27,7 +28,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return  view("products.create");
+        $categories = Category::all();
+        return  view("products.create",["categories"=>$categories]);
     }
 
     /**
