@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->foreignId("category_id")->nullable()->constrained();
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->string('status');
+            $table->integer('amount');
+            $table->timestamps();
         });
     }
 
@@ -25,14 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            //
-<<<<<<< HEAD
-
-                $table->dropForeign(["category_id"]);
-
-=======
->>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
-        });
+        Schema::dropIfExists('orders');
     }
 };

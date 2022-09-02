@@ -8,9 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>cafetria</title>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}" />
+     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('assets/css/styles.css')}}" />
+=======
     <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}" /> 
      <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{asset('assets/css/styles.css')}}" /> 
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
 </head>
 <body>
     <div class="container">
@@ -18,13 +24,29 @@
             <div class="col-md-12">
                 <div class="card">
                     <div style="background-color: rgb(52, 13, 88)" class="card-header">{{ __('Dashboard') }}</div>
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
                     {{-- <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
+<<<<<<< HEAD
+
+                        {{ __('You are logged in!') }}
+
+                        <div>
+
+                        </div>
+                    </div> --}}
+                    <div>
+
+
+=======
     
                         {{ __('You are logged in!') }}
     
@@ -35,6 +57,7 @@
                     <div>
       
       
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
           <main>
             <section class="main-padding">
               <div class="container">
@@ -116,7 +139,11 @@
                     </form>
                   </div>
                   <!-- ./orders-panel -->
+<<<<<<< HEAD
+
+=======
       
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
                   <!-- all-products -->
                   <div class="col-md-8">
                     <div class="all-products">
@@ -260,6 +287,19 @@
               <!-- ./container -->
             </section>
           </main>
+<<<<<<< HEAD
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+=======
       
                     </div>
                    
@@ -271,11 +311,16 @@
         </div>
     </div>
  
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
     <script src="{{asset('assets/js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/popper.min.js')}}"></script>
     <script src="{{asset('assets/js/modules/02_users.js')}}"></script>
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
 </body>
 </html>
 @endsection
