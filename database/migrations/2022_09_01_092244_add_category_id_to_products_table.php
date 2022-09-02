@@ -27,9 +27,12 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             //
+<<<<<<< HEAD
 
                 $table->dropForeign(["category_id"]);
 
+=======
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
         });
     }
 };

@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "072e5a57e9225cf5215dd8f2416df033",
+=======
+    "content-hash": "95b694b18e97667437a84c0f7c711826",
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
     "packages": [
         {
             "name": "brick/math",
@@ -898,6 +902,7 @@
             "time": "2022-08-28T14:45:39+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "josezenem/laravel-make-migration-pivot",
             "version": "1.0.0",
             "source": {
@@ -976,6 +981,8 @@
             "time": "2022-03-01T20:50:10+00:00"
         },
         {
+=======
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
             "name": "laravel/framework",
             "version": "v9.27.0",
             "source": {
@@ -2968,6 +2975,7 @@
             "time": "2022-08-05T17:58:37+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "spatie/laravel-package-tools",
             "version": "1.12.1",
             "source": {
@@ -3027,6 +3035,8 @@
             "time": "2022-06-28T14:29:26+00:00"
         },
         {
+=======
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
             "name": "symfony/console",
             "version": "v6.1.4",
             "source": {

@@ -7,7 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<<<<<<< HEAD
     <title>{{ config('app.name', 'Cafeteria') }}</title>
+=======
+    <title>Cafeteria</title>
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,7 +25,11 @@
    *
    {
     color:#FFF;
+<<<<<<< HEAD
     background-color: #665388
+=======
+    background-color: #605D86
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
    }
 </style>
    
@@ -32,7 +40,11 @@
             <div class="container">
                 <a style="width: 20%;"  class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
+<<<<<<< HEAD
                     <img width="20%" height="15%" src="{{asset('logo.png')}}" alt="logo">
+=======
+                    <img width="40vh" height="15%" src="{{asset('logo.png')}}" alt="logo">
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
                    
                      <span  style="font-weight: bolder;font-size: 1.9rem">  Cafeteria</span>
                 </a>
@@ -95,9 +107,18 @@
             </div>
         </nav>
 
+<<<<<<< HEAD
         <main class="py-4 container">
             @yield('content')
         </main>
+=======
+        <main class="container">
+            @yield('content')
+        </main>
+        <div>
+            @yield('welcome')
+        </div>
+>>>>>>> 9588aa0576a12669146d76fe2177423079ed6232
     </div>
 </body>
 </html>
