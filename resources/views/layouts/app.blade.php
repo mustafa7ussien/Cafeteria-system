@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Cafeteria') }}</title>
+    <title>Cafeteria</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -32,7 +32,7 @@
             <div class="container">
                 <a style="width: 20%;"  class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
-                    <img width="20%" height="15%" src="{{asset('logo.png')}}" alt="logo">
+                    <img width="40vh" height="15%" src="{{asset('logo.png')}}" alt="logo">
                    
                      <span  style="font-weight: bolder;font-size: 1.9rem">  Cafeteria</span>
                 </a>

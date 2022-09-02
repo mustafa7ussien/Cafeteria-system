@@ -8,7 +8,7 @@
     position: relative;
     margin-top:0;
     min-height: 88vh;
-    width:85.2rem;
+    width:100%;
     background: url({{asset('bg.png')}}) no-repeat;
     background-size: cover;
     background-position: center;
