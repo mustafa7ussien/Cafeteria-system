@@ -21,7 +21,7 @@
    *
    {
     color:#FFF;
-    background-color: #665388
+    background-color: #605D86
    }
 </style>
    
@@ -95,9 +95,12 @@
             </div>
         </nav>
 
-        <main class="py-4 container">
+        <main class="container">
             @yield('content')
         </main>
+        <div>
+            @yield('welcome')
+        </div>
     </div>
 </body>
 </html>
