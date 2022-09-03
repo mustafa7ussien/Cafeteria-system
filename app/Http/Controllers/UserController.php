@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use PHPUnit\Framework\Constraint\FileExists;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -14,6 +15,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $users=User::all();
@@ -47,8 +53,17 @@ class UserController extends Controller
             $image->move($destinationpath, $imagename);
             $user_data["image"]=$imagename;
         }
-        User::create($user_data);
-        return  to_route("users.index");
+        // User::create($user_data);
+        User::create([
+            'name' => $user_data['name'],
+            'email' => $user_data['email'],
+            'password' => Hash::make($user_data['password']),
+            'room_no' => $user_data['room_no'],
+            'ext' => $user_data['ext'],
+            'image' => $user_data['image']
+            
+        ]);
+        return  to_route("login");
     }
 
     /**
