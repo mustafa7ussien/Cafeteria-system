@@ -15,7 +15,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -45,10 +45,10 @@ class OrdersController extends Controller
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $user = User::find($id);
-        return view("orders.show",["order"=>$user]);
+        // $user = User::find($id);
+        // return view("admin.orders.index",["order"=>$user]);
     }
 
     /**
