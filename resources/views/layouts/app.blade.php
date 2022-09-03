@@ -53,6 +53,7 @@
                     </ul>
                     <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/home"> Home</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/products"> Products</a> </li> </ul>
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/users"> Users</a> </li> </ul>
                     
                     
 
