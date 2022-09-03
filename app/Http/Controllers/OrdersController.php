@@ -48,7 +48,8 @@ class OrdersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view("orders.show",["order"=>$user]);
+        $order = $user->order;
+        return view("orders.show",["order"=>$order]);
     }
 
     /**
