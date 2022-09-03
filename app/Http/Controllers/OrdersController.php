@@ -52,8 +52,6 @@ class OrdersController extends Controller
         return view("orders.show",["order"=>$order]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response

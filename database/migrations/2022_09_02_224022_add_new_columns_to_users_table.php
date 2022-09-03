@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('room_no')->default(2010);
             $table->integer("ext")->default(5605);
-            $table->string('image');
+            $table->string('image')->default('userimages/asd.png');
         });
     }
 
