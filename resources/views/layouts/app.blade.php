@@ -51,9 +51,18 @@
                      
 
                     </ul>
-                    <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/home"> Home</a> </li> </ul>
+                    @can('isAdmin')
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/home"> Home</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/products"> Products</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/users"> Users</a> </li> </ul>
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href=""> Manual Orders</a> </li> </ul>
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href=""> Checks</a> </li> </ul>
+                    @elsecan("isUser")
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/home"> Home</a> </li> </ul>
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="">My Orders</a> </li> </ul>
+                       
+                    @endcan
+                        
                     
                     
 
@@ -65,6 +74,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
+                              
                             @endif
 
                             @if (Route::has('register'))
@@ -73,10 +83,21 @@
                                 </li>
                             @endif
                         @else
+                        @can('isAdmin')
+                        <li> <button class="btn btn-info">Admin</button></li>
+                        @elsecan("isUser")
+                        <li> <button class="btn btn-info">User</button></li>
+                        @endcan
                             <li class="nav-item dropdown">
+                              
                                 <a style="color:#FFF" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
+                               
+                                    
+                                        
+                                    
+                               
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
