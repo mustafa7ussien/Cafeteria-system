@@ -15,7 +15,8 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        
+        $orders=Orders::all();
+        return view("admin.orders.index",["orders"=>$orders]);
     }
 
     /**
