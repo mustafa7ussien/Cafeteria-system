@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
-            $table->integer('amount');
+            // $table->string('status');
+            $table->enum('status',["processing", "out_for_delivery", "cancel"]);
+            $table->string('notes');
+            // $table->integer('amount');
             $table->timestamps();
         });
     }
