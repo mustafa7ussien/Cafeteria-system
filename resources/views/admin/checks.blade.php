@@ -17,6 +17,8 @@
         <section class="main-padding">
           <div class="container">
             <h1>Checks</h1>
+      
+         
             
 
            
@@ -69,6 +71,7 @@
                   </tr>
                 </thead>
                 <tbody>
+                 
                  
                   <!-- * first user -->
                   @foreach($orders as $order)

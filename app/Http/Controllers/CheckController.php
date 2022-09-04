@@ -26,6 +26,9 @@ class CheckController extends Controller
         $products=Product::all();
         return  view("admin.checks", ["orders"=>$orders,'products'=>$products]);
 
+        // $orders=Orders::findOrFail(1);
+        // return view("admin.checks",["orders"=>$orders]);
+
 
     }
 

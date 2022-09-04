@@ -4,6 +4,8 @@
 @section("content")
    
 <h1>show orders</h1>  
-@dump($orders)
+@foreach ($orders->product as $order)
+@dump($order1)
+@endforeach
 
 @endsection
