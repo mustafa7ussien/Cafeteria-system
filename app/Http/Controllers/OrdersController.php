@@ -51,8 +51,7 @@ class OrdersController extends Controller
         $order = $user->order;
         return view("orders.show",["order"=>$order]);
     }
-
-     *
+     /**
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response
      */
@@ -79,8 +78,11 @@ class OrdersController extends Controller
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Orders $orders)
+    public function destroy(Orders $orders , $id)
     {
         //
+
+        $orders->delete();
+        return to_route("orders.show",$id);
     }
 }
