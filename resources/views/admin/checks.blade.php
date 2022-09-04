@@ -25,13 +25,13 @@
                 <div class="col-sm-6">
                   <div class="from-group">
                     <label for="start">Start date:</label>
-                    <input type="date" class="form-control start" name="start" />
+                    <input type="date" class="form-control end" value="{{$orders[0]->created_at->format('Y-m-d')}}" name="end" />
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="end">end date:</label>
-                    <input type="date" class="form-control end" name="end" />
+                    <input type="date" class="form-control end" name="end" value="{{$orders[count($orders)-1]->created_at->format('Y-m-d')}}" />
                   </div>
                 </div>
                 <div class="col-sm-6">
@@ -69,14 +69,28 @@
                   </tr>
                 </thead>
                 <tbody>
+                 
                   <!-- * first user -->
                   @foreach($orders as $order)
+
+
+                  {{-- @foreach ($products as $product)
+                  @if($order->author_id==$product->id)
+
+                  {{$product}}
+
+                  @endif
+                  @endforeach --}}
+                  
+
+                
                   
                   
                   <tr class="user">
                     <td>
                       <i class="fa fa-plus-square"></i>
                       <span>{{$order->user?$order->user->name:""}}</span>
+                      
                       
 
                     </td>
@@ -110,26 +124,31 @@
                             <td colspan="2">
                               <div class="row">
                                 <!-- each-item -->
+                                
+                                {{-- @if($order->author_id==$product->id) --}}
+              
+                                
+              
+                                {{-- @endif --}}
+                                
                                 <div class="col-sm-3">
                                   <div class="each-order">
                                     <img
-                                      src="https://via.placeholder.com/100"
+                                      src="{{asset("productimages/".$products[0]->image)}}"
                                       class="w-100"
                                       width="100"
                                       height="100"
                                       alt=""
                                     />
-                                    <h5>tea</h5>
-                                    <input
-                                      type="text"
-                                      name="tea"
-                                      value="15"
-                                      hidden
-                                    />
-                                    <span style="background-color: #605D86">15 LE</span>
+                                    <h5>{{$products[0]->name}}</h5>
+                                  
+                                    <span style="background-color: #605D86">{{$products[0]->price}} LE</span>
+                                    <span>{{$order->price/$products[0]->price}}</span>
                                     
                                   </div>
                                 </div>
+
+                               
                                 <!-- each-item -->
                                
                                 <!-- each-item -->

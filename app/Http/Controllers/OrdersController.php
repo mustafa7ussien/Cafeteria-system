@@ -50,10 +50,11 @@ class OrdersController extends Controller
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $user = User::find($id);
-        $order = $user->order;
+        // $user = User::all();
+        // $order = $user->order;
+        $order=Orders::all();
         return view("orders.show",["order"=>$order]);
     }
      /**
