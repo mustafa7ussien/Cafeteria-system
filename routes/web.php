@@ -5,6 +5,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\CheckController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,5 @@ Route::resource("products", ProductController::class);
 Route::resource("categories", CategoryController::class);
 Route::resource("users", UserController::class);
 Route::resource("orders", OrdersController::class);
+
+Route::resource("checks", CheckController::class);

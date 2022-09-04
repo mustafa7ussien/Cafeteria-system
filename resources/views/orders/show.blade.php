@@ -4,8 +4,11 @@
     <h1 class="my-5" style="font-size:40px;font-weight:bold;">My Orders</h1>
 
     <form action="" class="my-4">
-        <input class="me-5" style="width:200px  ;padding:10px"type="date" value="{{$order[0]->created_at->format('Y-m-d')}}" name="from">
-        <input class="me-5" type="date" style="width:200px; padding:10px" value="{{$order[count($order)-1]->created_at->format('Y-m-d')}}" name="to">
+        
+        
+        <input class="me-5" style="width:200px  ;padding:10px"type="date" value="" name="from">
+        <input class="me-5" type="date" style="width:200px; padding:10px" value="" name="to">
+        
     </form>
     <table class="table table-success table-striped">
         <thead>

@@ -14,7 +14,7 @@ class Orders extends Model
     function user(){
         return $this->belongsTo(User::class);   //this relation will return with object
     }
-    function products(){
+    function product(){
         return $this->belongsToMany(Product::class);   //this relation will return with object
     }
 }

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Orders;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\User;
 
-class OrdersController extends Controller
+class CheckController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,12 @@ class OrdersController extends Controller
     {
         $this->middleware('auth');
     }
-    
     public function index()
     {
-        //
+        $orders=Orders::all();
+        return  view("admin.checks", ["orders"=>$orders]);
+
+
     }
 
     /**
@@ -50,13 +52,16 @@ class OrdersController extends Controller
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Orders $orders)
     {
-        $user = User::find($id);
-        $order = $user->order;
-        return view("orders.show",["order"=>$order]);
+         // $orders=Orders::all();
+        // return view("admin.checks",["orders"=>$orders]);
+        // return  view("admin.checks", ["orders"=>$orders]);
     }
-     /**
+
+    /**
+     * Show the form for editing the specified resource.
+     *
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response
      */
@@ -83,12 +88,8 @@ class OrdersController extends Controller
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Orders $orders)
     {
         //
-        $orders= Orders::findOrFail($id);
-
-        $orders->delete();
-        return to_route("orders.show",$id);
     }
 }
