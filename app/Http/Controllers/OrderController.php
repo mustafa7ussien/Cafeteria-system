@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -31,7 +32,8 @@ class OrderController extends Controller
     public function create()
     {
         //
-        return view("orders.create");
+        $products = Product::all();
+        return view("orders.create" ,["products"=>$products] );
     }
 
     /**

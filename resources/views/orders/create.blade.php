@@ -195,50 +195,27 @@
                         <h3>Products</h3>
                         <div class="row">
                           <!-- each-order -->
+                          @foreach ($products as $product)
+
+                          @dump($product->image)
                           <div class="col-sm-3">
-                            <div class="each-order" ondblclick="changeToTea();" onclick="changeDouble2('Tea' , 10)">
-                              <img
-                                src="{{url('/productimages/tea.jpg')}}"
+                              <div class="each-order"  onclick="changeDouble2( `{{$product->name}}`.toLowerCase() , {{$product->price}})">
+                                <img
+                                src="{{asset("productimages/".$product->image)}}"
                                 class="w-100"
                                 width="100"
                                 height="100"
                                 alt=""
-                              />
-                              <h5>tea</h5>
-                              <input type="text" name="tea" value="5" hidden />
-                              <span>10 LE</span>
-                            </div>
-                          </div>
+                                />
+                                <h5>{{$product->name}}</h5>
+                                <input type="text" name="tea" value="5" hidden />
+                                <span>{{$product->price}}</span>
+                                </div>
+                        </div>
+                        </div>
+                        @endforeach
                           <!-- each-order -->
-                          <div class="col-sm-3">
-                            <div class="each-order"  ondblclick="changeToCoffee();" onclick="changeDouble2('coffee' , 10)">
-                              <img
-                                src="{{url('/productimages/Coffee.jpg')}}"
-                                class="w-100"
-                                width="100"
-                                height="100"
-                                alt=""
-                              />
-                              <h5>coffee</h5>
-                              <input type="text" name="coffee" value="5" hidden />
-                              <span>10 LE</span>
-                            </div>
-                          </div>
-                          <!-- each-order -->
-                          <div class="col-sm-3">
-                            <div class="each-order"  ondblclick="addElement();" onclick="changeDouble2('nescafe' , 15)">
-                              <img
-                                src="{{url('/productimages/Nescafe.jpg')}}"
-                                class="w-100"
-                                width="100"
-                                height="100"
-                                alt=""
-                              />
-                              <h5>nescafe</h5>
-                              <input type="text" name="nescafe" value="10" hidden />
-                              <span>15 LE</span>
-                            </div>
-                          </div>
+
                           <!-- each-order -->
                       <!-- products -->
                     </div>
@@ -266,8 +243,16 @@
         </div>
     </div>
 
+    <?php
+        $amounts;
+    forEach($products as $product){
+        $amounts["$product->name"] = 0;
+    }
+    dump($amounts);
+    ?>
     <script>
   var inputVal = document.getElementById("myInput").value;
+
   function Mydecrement() {
     inputVal =inputVal-1;
     document.getElementById("myInput").value = inputVal;
@@ -317,6 +302,8 @@
     newDiv.appendChild(newContent);
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("div1");
+    @dump($amounts["Tea"])
+    {{$amounts[name] = 4}}
         //create Button to delete
         // var _button = document.createElement("button");
         // _button.data = "hi";
