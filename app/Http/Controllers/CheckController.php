@@ -6,7 +6,7 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Product;
-use App\Models\Order_Product;
+// use App\Models\Order_Product;
 
 
 class CheckController extends Controller
@@ -23,10 +23,11 @@ class CheckController extends Controller
     public function index()
     {
         $orders=Order::all();
-        $products=Product::all();
-        return  view("admin.checks", ["orders"=>$orders,'products'=>$products]);
+        $orders1=Order::find(1);
+        // $products=Product::all();
+        return  view("admin.checks", ["orders"=>$orders,"orders1"=>$orders1]);
 
-        // $orders=Order::findOrFail(1);
+        // $orders=Order::find(1);
         // return view("admin.checks",["orders"=>$orders]);
 
 
