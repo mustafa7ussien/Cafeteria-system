@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CheckController;
 
 
@@ -30,6 +30,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource("products", ProductController::class);
 Route::resource("categories", CategoryController::class);
 Route::resource("users", UserController::class);
-Route::resource("orders", OrdersController::class);
+Route::resource("orders", OrderController::class);
 
 Route::resource("checks", CheckController::class);

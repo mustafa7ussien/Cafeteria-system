@@ -18,13 +18,9 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 <style>
-   *
-   {
-    color:#FFF;
-    background-color: #605D86
-   }
+
 </style>
-   
+
 </head>
 <body>
     <div id="app">
@@ -33,22 +29,22 @@
                 <a style="width: 20%;"  class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
                     <img width="40vh" height="15%" src="{{asset('logo.png')}}" alt="logo">
-                   
+
                      <span  style="font-weight: bolder;font-size: 1.9rem">  Cafeteria</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
-                    
+
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     {{-- <li style="float: left"><a href=""> home</a> </li> --}}
 
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        
-                       
-                       
-                     
+
+
+
+
 
                     </ul>
                     @can('isAdmin')
@@ -59,12 +55,12 @@
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/checks"> Checks</a> </li> </ul>
                     @elsecan("isUser")
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/home"> Home</a> </li> </ul>
-                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/orders/show">My Orders</a> </li> </ul>
-                       
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/orders/ {{ Auth::user()->id }}">My Orders</a> </li> </ul>
+
                     @endcan
-                        
-                    
-                    
+
+
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -74,7 +70,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                              
+
                             @endif
 
                             @if (Route::has('register'))
@@ -89,15 +85,15 @@
                         <li> <button class="btn btn-info">User</button></li>
                         @endcan
                             <li class="nav-item dropdown">
-                              
+
                                 <a style="color:#FFF" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-                               
-                                    
-                                        
-                                    
-                               
+
+
+
+
+
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"

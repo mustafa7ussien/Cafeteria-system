@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Orders;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Product;
@@ -22,11 +22,11 @@ class CheckController extends Controller
     }
     public function index()
     {
-        $orders=Orders::all();
+        $orders=Order::all();
         $products=Product::all();
         return  view("admin.checks", ["orders"=>$orders,'products'=>$products]);
 
-        // $orders=Orders::findOrFail(1);
+        // $orders=Order::findOrFail(1);
         // return view("admin.checks",["orders"=>$orders]);
 
 
@@ -56,12 +56,12 @@ class CheckController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Orders  $orders
+     * @param  \App\Models\Order  $orders
      * @return \Illuminate\Http\Response
      */
-    public function show(Orders $orders)
+    public function show(Order $orders)
     {
-         // $orders=Orders::all();
+         // $orders=Order::all();
         // return view("admin.checks",["orders"=>$orders]);
         // return  view("admin.checks", ["orders"=>$orders]);
     }
@@ -69,10 +69,10 @@ class CheckController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Orders  $orders
+     * @param  \App\Models\Order  $orders
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orders $orders)
+    public function edit(Order $orders)
     {
         //
     }
@@ -81,10 +81,10 @@ class CheckController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Orders  $orders
+     * @param  \App\Models\Order  $orders
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Orders $orders)
+    public function update(Request $request, Order $orders)
     {
         //
     }
@@ -92,10 +92,10 @@ class CheckController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Orders  $orders
+     * @param  \App\Models\Order  $orders
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Orders $orders)
+    public function destroy(Order $orders)
     {
         //
     }

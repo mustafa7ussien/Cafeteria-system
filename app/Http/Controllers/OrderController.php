@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Orders;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class OrdersController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class OrdersController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         //
@@ -31,6 +31,7 @@ class OrdersController extends Controller
     public function create()
     {
         //
+        return view("orders.create");
     }
 
     /**
@@ -47,21 +48,21 @@ class OrdersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Orders  $orders
+     * @param  \App\Models\Order  $orders
      * @return \Illuminate\Http\Response
      */
     public function show()
     {
         // $user = User::all();
         // $order = $user->order;
-        $order=Orders::all();
+        $order=Order::all();
         return view("orders.show",["order"=>$order]);
     }
      /**
-     * @param  \App\Models\Orders  $orders
+     * @param  \App\Models\Order  $orders
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orders $orders)
+    public function edit(Order $orders)
     {
         //
     }
@@ -70,10 +71,10 @@ class OrdersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Orders  $orders
+     * @param  \App\Models\Order  $orders
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Orders $orders)
+    public function update(Request $request, Order $orders)
     {
         //
     }
@@ -81,13 +82,13 @@ class OrdersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Orders  $orders
+     * @param  \App\Models\Order  $orders
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $orders= Orders::findOrFail($id);
+        $orders= Order::findOrFail($id);
 
         $orders->delete();
         return to_route("orders.show",$id);

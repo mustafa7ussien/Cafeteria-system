@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('status',["processing", "out_for_delivery", "cancel"]);
             $table->string('notes');
             $table->integer("price");
+            $table->string('room')->default(0);
             // $table->integer('amount');
             $table->timestamps();
         });

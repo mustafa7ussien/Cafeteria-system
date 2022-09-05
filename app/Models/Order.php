@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Product;
 use App\Models\User;
 
-class Orders extends Model
+class Order extends Model
 {
     use HasFactory;
 
