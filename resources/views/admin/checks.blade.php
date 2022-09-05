@@ -17,6 +17,7 @@
         <section class="main-padding">
           <div class="container">
             <h1>Checks</h1>
+          
       
          
             
@@ -133,23 +134,30 @@
                                 
               
                                 {{-- @endif --}}
+                                @foreach($orders1->product as $product)
+                                {{-- @dd($product->name) --}}
+                                         
+                                         
+                             
+                                
                                 
                                 <div class="col-sm-3">
                                   <div class="each-order">
                                     <img
-                                      src="{{asset("productimages/".$products[0]->image)}}"
+                                      src="{{asset("productimages/".$product->image)}}"
                                       class="w-100"
                                       width="100"
                                       height="100"
                                       alt=""
                                     />
-                                    <h5>{{$products[0]->name}}</h5>
+                                    <h5>{{$product->name}}</h5>
                                   
-                                    <span style="background-color: #605D86">{{$products[0]->price}} LE</span>
-                                    <span>{{$order->price/$products[0]->price}}</span>
+                                    <span style="background-color: #605D86">{{$product->price}} LE</span>
+                                    <span>{{$product->quantity}}</span>
                                     
                                   </div>
                                 </div>
+                                @endforeach
 
                                
                                 <!-- each-item -->

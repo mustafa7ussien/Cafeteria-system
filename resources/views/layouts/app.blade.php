@@ -17,7 +17,12 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-<style>
+<style>  
+*{
+     color:#FFF;
+     background-color: #605D86
+}
+    
 
 </style>
 
@@ -48,13 +53,13 @@
 
                     </ul>
                     @can('isAdmin')
-                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/home"> Home</a> </li> </ul>
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/orders/create"> Home</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/products"> Products</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/users"> Users</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href=""> Manual Orders</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/checks"> Checks</a> </li> </ul>
                     @elsecan("isUser")
-                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/home"> Home</a> </li> </ul>
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/orders/create"> Home</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/orders/ {{ Auth::user()->id }}">My Orders</a> </li> </ul>
 
                     @endcan
