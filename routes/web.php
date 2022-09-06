@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CheckController;
+use App\Http\Controllers\AdminOrderController;
 
 
 /*
@@ -25,7 +26,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource("products", ProductController::class);
 Route::resource("categories", CategoryController::class);
@@ -33,3 +34,6 @@ Route::resource("users", UserController::class);
 Route::resource("orders", OrderController::class);
 
 Route::resource("checks", CheckController::class);
+Route::get('/sorder',[AdminOrderController::class,'index'])->name('sorder');
+
+Route::delete('/sorder/{id}',[AdminOrderController::class,'destroy'])->name('destroy');

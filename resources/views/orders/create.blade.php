@@ -197,7 +197,7 @@
                           <!-- each-order -->
                           @foreach ($products as $product)
 
-                          @dump($product->image)
+                          {{-- @dump($product->image) --}}
                           <div class="col-sm-3">
                               <div class="each-order"  onclick="changeDouble2( `{{$product->name}}`.toLowerCase() , {{$product->price}})">
                                 <img
@@ -248,7 +248,7 @@
     forEach($products as $product){
         $amounts["$product->name"] = 0;
     }
-    dump($amounts);
+    // dump($amounts);
     ?>
     <script>
   var inputVal = document.getElementById("myInput").value;
@@ -302,8 +302,7 @@
     newDiv.appendChild(newContent);
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("div1");
-    @dump($amounts["Tea"])
-    {{$amounts[name] = 4}}
+  
         //create Button to delete
         // var _button = document.createElement("button");
         // _button.data = "hi";

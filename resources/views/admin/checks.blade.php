@@ -153,7 +153,7 @@
                                     <h5>{{$product->name}}</h5>
                                   
                                     <span style="background-color: #605D86">{{$product->price}} LE</span>
-                                    <span>{{$product->quantity}}</span>
+                                    <span>{{$order->price/$product->price}}</span>
                                     
                                   </div>
                                 </div>

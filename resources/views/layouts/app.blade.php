@@ -53,7 +53,7 @@
 
                     </ul>
                     @can('isAdmin')
-                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/orders/create"> Home</a> </li> </ul>
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/sorder"> Home</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/products"> Products</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/users"> Users</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href=""> Manual Orders</a> </li> </ul>

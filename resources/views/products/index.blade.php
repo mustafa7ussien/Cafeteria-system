@@ -20,7 +20,7 @@
             <tr>
                 <td>{{$product->name}}</td>
                 <td>{{$product->price}}</td>
-                <td><img src="{{asset("productimages/".$product->image)}}" alt="product image" width="15%" height="15%"> </td>
+                <td><img src="{{asset("productimages/".$product->image)}}" alt="product image" width="50px" height="50px"> </td>
                 <td><a href="{{$product->category_id?route("categories.show",$product->category_id):''}}">
                  {{$product->category?$product->category->name:""}} </a></td>
 
