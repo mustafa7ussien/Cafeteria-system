@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -31,9 +32,11 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
         $products = Product::all();
-        return view("orders.create" ,["products"=>$products] );
+        // $order = Order::find(2);
+        $order = Order::get()->last();
+        return view("orders.create" ,["users"=>$users ,"products"=>$products,"order"=>$order] );
     }
 
     /**
@@ -44,7 +47,35 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $myOrder = ["status"=>"processing",
+        "notes"=>$request->notes,
+        "price"=>$request->price,
+        "room"=>$request->room_no,
+        "user_id"=>$request->userid
+        ];
+        $my = Order::create($myOrder);
+
+
+      //   dump($my);
+
+        foreach($request->request as $key => $val)
+        {
+            if ($key == "userid" || $key == "_token")
+            continue;
+            else if ($key == "notes")
+            break;
+            else{
+            $product = (string) $key;
+
+            $query = DB::table('products')->where('name' , $product)->first();
+              //   dump($my->id);
+            if ($query != null){
+                DB::table("order_product")->insert(["order_id" => $my->id , "product_id"=>  $query->id, "amount"=>$val]);
+            }
+        }
+        }
+        return  to_route("sorder");
     }
 
     /**

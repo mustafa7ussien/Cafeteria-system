@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use PHPUnit\Framework\Constraint\FileExists;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -63,7 +64,13 @@ class UserController extends Controller
             'image' => $user_data['image']
             
         ]);
-        return  to_route("login");
+       
+        
+            Alert::alert('Success', 'Create User Successfully', 'success');
+            return  to_route("login");
+
+        
+        
     }
 
     /**
@@ -109,8 +116,14 @@ class UserController extends Controller
             $inputdata["image"] = $imagename;
         }
 
-        $user->update($inputdata);
-        return to_route("users.index", $user->id);
+        $uuser=$user->update($inputdata);
+        if($uuser)
+        {
+            Alert::toast('Edit Successfuly', 'Successfuly');
+
+            return to_route("users.index", $user->id);
+        }
+        
     }
 
     /**
@@ -125,8 +138,14 @@ class UserController extends Controller
             File::delete(public_path("userimages/$user->image"));
         }
      //    dump($product);
-    $user->delete();
+   $uuser= $user->delete();
+   if($uuser)
+   {
+    Alert::warning('Warning ', 'You will delete User');
     return to_route("users.index");
+
+   }
+    
     }
 
     private function  deleteImage(User $user){

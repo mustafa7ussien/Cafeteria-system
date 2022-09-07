@@ -23,11 +23,16 @@
      background-color: #605D86
 }
     
+input
+{
+    background-color: lightgray;
+}
 
 </style>
 
 </head>
 <body>
+    @include('sweetalert::alert')
     <div id="app">
         <nav  class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
@@ -56,7 +61,7 @@
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/sorder"> Home</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/products"> Products</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/users"> Users</a> </li> </ul>
-                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href=""> Manual Orders</a> </li> </ul>
+                        <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/sorder/create"> Manual Orders</a> </li> </ul>
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/checks"> Checks</a> </li> </ul>
                     @elsecan("isUser")
                         <ul class="navbar-nav me-auto"><li><a style="font-size: 1.5rem" href="/orders/create"> Home</a> </li> </ul>
@@ -64,17 +69,21 @@
 
                     @endcan
 
+                  
+
 
 
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+                        
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
+                                
 
                             @endif
 
@@ -89,6 +98,8 @@
                         @elsecan("isUser")
                         <li> <button class="btn btn-info">User</button></li>
                         @endcan
+
+                        
                             <li class="nav-item dropdown">
 
                                 <a style="color:#FFF" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -111,6 +122,9 @@
                                         @csrf
                                     </form>
                                 </div>
+                            </li>
+                            <li>
+                                <img style="border-radius: 50%" src="{{asset('userimages/'.Auth::user()->image)}}" width="50px" height="50px" alt="user image">
                             </li>
                         @endguest
                     </ul>

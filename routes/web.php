@@ -35,5 +35,7 @@ Route::resource("orders", OrderController::class);
 
 Route::resource("checks", CheckController::class);
 Route::get('/sorder',[AdminOrderController::class,'index'])->name('sorder');
+Route::get('/sorder/create',[AdminOrderController::class,'create'])->name('sorder.create');
+Route::post("/sorder", [AdminOrderController::class, "store"])->name("sorder.store");
 
 Route::delete('/sorder/{id}',[AdminOrderController::class,'destroy'])->name('destroy');

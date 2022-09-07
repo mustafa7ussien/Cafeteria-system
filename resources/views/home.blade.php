@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('welcome')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,20 +27,20 @@
     <br> <br>
     
     <h3 class="fst-italic"> Orders</h3>
+    {{-- @dump($sorders) --}}
     
     <br><br>
     
-    <table class="table" >
+    <table class="table" style="border: 3px solid #DDD" >
  <thead>
     <tr style="width: 100%">
         <th>User Name</th>
-       
         <th> Status</th>
         <th>Notes</th>
         <th>price</th>
         <th>Date</th>
         {{-- <th>Room<th> --}}
-        <th>Quantity</th>
+        <th>Room.NO</th>
         <th> Name Products </th>
         <th> image </th>
         <th>Remove</th>
@@ -51,25 +51,21 @@
        
     @foreach ($sorders as  $sorder)
     <tr>
-        <td>{{$sorder->name}}</td>
-         {{-- <td>{{$sorder->room}}</td> --}}
+        <td>{{$sorder->uname}}</td>
         <td>{{$sorder->status}}</td>
         <td>{{$sorder->notes}}</td>
         <td>{{$sorder->price}}</td>
         <td>{{$sorder->created_at}}</td>
-        {{-- <td>{{$sorder->room}}</td> --}}
+        <td>{{$sorder->room}}</td>
+        {{-- <td>{{$sorder->quantity}}</td> --}}
+        <td>{{$sorder->name}}</td>
+        <td> 
+       
+            <img src="{{asset("productimages/".$sorder->pimage)}}" width='80%' alt="...">
+            
+        </td>
         
-        <td>  @foreach ($shows as $a ) {{$a->quantity}} @endforeach </td>
-        <td> 
-            @foreach ($shows as $a )
-            {{$a->name}}
-            @endforeach
-        </td>
-        <td> 
-            @foreach ($shows as $a )
-            <img src="{{asset("productimages/".$a->image)}}" width="15%" height="15%">
-            @endforeach
-        </td>
+        
        
     
         <td>

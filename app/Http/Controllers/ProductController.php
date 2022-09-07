@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use PHPUnit\Framework\Constraint\FileExists;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -53,8 +54,19 @@ class ProductController extends Controller
             $image->move($destinationpath, $imagename);
             $product_data["image"]=$imagename;
         }
-        Product::create($product_data);
+        
+       $creatproduct= Product::create($product_data);
+       if($creatproduct)
+       {
+        // alert()->success('sucess','Create Product Successfully');
+        // Alert::toast('sucess', 'Create Product Successfully');
+        Alert::alert('Success', 'Create Product Successfully', 'success');
+
+
         return  to_route("products.index");
+
+       }
+        
     }
 
     /**
@@ -100,8 +112,15 @@ class ProductController extends Controller
             $inputdata["image"] = $imagename;
         }
 
-        $product->update($inputdata);
-        return to_route("products.index", $product->id);
+         $edit=$product->update($inputdata);
+         if($edit)
+         {
+            Alert::toast('Edit Successfuly', 'Edit Successfuly');
+
+            return to_route("products.index", $product->id);
+
+         }
+        
     }
 
     /**
@@ -116,7 +135,14 @@ class ProductController extends Controller
                            File::delete(public_path("productimages/$product->image"));
                        }
                     //    dump($product);
-                   $product->delete();
+                  $dd= $product->delete();
+                  if($dd)
+                  {
+                    Alert::warning('Warning ', 'You will delete product');
+
+                    return to_route("products.index");
+
+                  }
                    return to_route("products.index");
     }
 

@@ -17,6 +17,10 @@
         <section class="main-padding">
           <div class="container">
             <h1>Checks</h1>
+             {{-- @foreach($orders1->product as $product)
+             @dump($product)
+             @endforeach --}}
+
           
       
          
@@ -135,7 +139,7 @@
               
                                 {{-- @endif --}}
                                 @foreach($orders1->product as $product)
-                                {{-- @dd($product->name) --}}
+                                
                                          
                                          
                              
@@ -148,12 +152,12 @@
                                       class="w-100"
                                       width="100"
                                       height="100"
-                                      alt=""
+                                      alt="product image"
                                     />
-                                    <h5>{{$product->name}}</h5>
+                                    <h5></h5>
                                   
                                     <span style="background-color: #605D86">{{$product->price}} LE</span>
-                                    <span>{{$order->price/$product->price}}</span>
+                                    <span>{{$product->name}}</span>
                                     
                                   </div>
                                 </div>
