@@ -23,7 +23,7 @@ class CheckController extends Controller
     public function index()
     {
         $orders=Order::all();
-        $orders1=Order::findOrFail(2);
+        $orders1=Order::findOrFail(1);
         // $products=Product::all();
         return  view("admin.checks", ["orders"=>$orders,"orders1"=>$orders1]);
 
