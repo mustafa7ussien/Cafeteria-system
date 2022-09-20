@@ -17,12 +17,11 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-<style>  
+<style>
 *{
      color:#FFF;
-     background-color: #605D86
 }
-    
+
 input
 {
     background-color: lightgray;
@@ -69,7 +68,7 @@ input
 
                     @endcan
 
-                  
+
 
 
 
@@ -77,13 +76,13 @@ input
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                                
+
 
                             @endif
 
@@ -99,7 +98,7 @@ input
                         <li> <button class="btn btn-info">User</button></li>
                         @endcan
 
-                        
+
                             <li class="nav-item dropdown">
 
                                 <a style="color:#FFF" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
