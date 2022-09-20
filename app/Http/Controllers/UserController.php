@@ -67,7 +67,7 @@ class UserController extends Controller
        
         
             Alert::alert('Success', 'Create User Successfully', 'success');
-            return  to_route("login");
+            return  to_route("users.index");
 
         
         

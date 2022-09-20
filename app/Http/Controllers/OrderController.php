@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class OrderController extends Controller
 {
@@ -75,7 +76,11 @@ class OrderController extends Controller
             }
         }
         }
-        return  to_route("sorder");
+     
+            return  to_route("sorder");
+
+       
+        
     }
 
     /**
@@ -123,7 +128,13 @@ class OrderController extends Controller
         //
         $orders= Order::findOrFail($id);
 
-        $orders->delete();
+       $dddd= $orders->delete();
+       if($dddd)
+       {
+        Alert::warning('Warning ', 'You will delete Order');
+
         return to_route("orders.show",$id);
+       }
+        
     }
 }

@@ -1,4 +1,4 @@
-@extends("layouts.app")
+@extends("layouts.master")
 @section('content')
 
     <h1 class="my-5" style="font-size:40px;font-weight:bold;">My Orders</h1>
