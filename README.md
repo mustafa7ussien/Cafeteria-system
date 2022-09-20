@@ -1,5 +1,10 @@
 # Demo
 
+![login](https://user-images.githubusercontent.com/77110627/191341025-dd5e29fc-bca2-4323-b67f-bd0a805d7893.PNG)
+![home](https://user-images.githubusercontent.com/77110627/191341080-bf862266-94e7-447f-b3cf-36e1eb0caabf.PNG)
+![user](https://user-images.githubusercontent.com/77110627/191341108-ef58795c-457e-45c3-a4d0-876fe3a76a88.PNG)
+![product](https://user-images.githubusercontent.com/77110627/191341125-f0194021-bdb2-4a79-8ca5-057ffe30ea19.PNG)
+![order](https://user-images.githubusercontent.com/77110627/191341145-e91ce3b8-c7f7-4e83-964f-29b16ee6460f.PNG)
 
 //video
 
